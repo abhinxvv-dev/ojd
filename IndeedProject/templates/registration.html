@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/boot.css" %}">
+    <link rel="stylesheet" href="{% static "css/demoform.css" %}">
+
+    <title></title>
+  </head>
+
+  <body>
+    <h1>LkoJobRegistrationForm</h1>
+
+
+      <hr>
+      <form class=""  method="post">
+        {{form.as_p}}
+{% csrf_token %}
+<input type="submit" name="" value="register">
+      </form>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static "css/demo.css" %}">
+    <title></title>
+  </head>
+
+  <body>
+    <h1>Lucknow Jobs Information</h1>
+
+      <img src="{%static "images/hyd2.jpg"%}" alt="">
+      <img src="{%static "images/hyd1.jpg"%}" alt="">
+      <img src="{%static "images/hyd3.jpg"%}" alt="">
+
+      <hr>
+      {% if jobs_list %}
+      <table id='tab'>
+        <thead>
+          <th>id</th>
+          <th>Company</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>date</th>
+
+        </thead>
+        {%for job in jobs_list %}
+        <tr>
+          <td>{{job.id}}</td>
+          <td>{{job.company}}</td>
+          <td>{{job.address}}</td>
+          <td>{{job.email}}</td>
+          <td>{{job.phone}}</td>
+          <td>{{job.date}}</td>
+
+        </tr>
+        {% endfor %}
+      </table>
+      {%else %}
+      <p>No Jobs Found in Hyderabad</p>
+    {% endif %}
+  </body>
+</html>
